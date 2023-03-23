@@ -53,7 +53,7 @@ jobs:
             docker run -p 80:80 -d my-app 
             dockerpath=debbiequarsh/my-app
             echo "Docker ID and Image: $dockerpath"
-            docker login u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD && docker tag $dockerpath $dockerpath:latest
+            echo "$DOCKERHUB_PASSWORD" | docker login u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD && docker tag $dockerpath $dockerpath:latest
             docker push $dockerpath:latest
 
             # docker build -f peng/Dockerfile -t $imageName .
