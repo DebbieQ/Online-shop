@@ -10,7 +10,7 @@ COPY . /app
 # Install packages from requirements.txt
 # hadolint ignore=
 RUN pip install --no-cache-dir --upgrade pip &&\
-	pip install --no-cache-dir -r requirements.txt	
+	pip install --no-cache-dir -r peng/requirements.txt	
 
 # Expose port 80
 EXPOSE 80
