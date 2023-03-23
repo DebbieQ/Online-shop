@@ -47,10 +47,10 @@ jobs:
       - run:
           name: Build, tag and push image
           command: |
-            chmod +x run_docker.sh
-            chmod +x upload_docker.sh
-            sh /peng/run_docker.sh
-            sh /peng/upload_docker.sh
+            docker build -t $imageName .
+            docker tag $imageName $DOCKERHUB_USERNAME/$imageName
+            echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
+            docker push $DOCKERHUB_USERNAME/$imageName
   kubernetes-deploy:
     docker:
       - image: cimg/python:3.10.0-node
