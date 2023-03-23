@@ -56,7 +56,6 @@ jobs:
             docker login && docker tag $dockerpath $dockerpath:latest
             docker push $dockerpath:latest
 
-
             # docker build -f peng/Dockerfile -t $imageName .
             # docker tag $imageName $DOCKERHUB_USERNAME/$imageName
             # echo "$DOCKERHUB_PASSWORD" | docker login -u $DOCKER_USERNAME --password-stdin
