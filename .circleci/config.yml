@@ -46,8 +46,8 @@ jobs:
       - run:
           name: Build, tag and push image
           command: |
-            # chmod 777 run_docker.sh
-            # chmod 777 upload_docker.sh
+            chmod 777 run_docker.sh
+            chmod 777 upload_docker.sh
             sh /peng/run_docker.sh
             sh /peng/upload_docker.sh
   kubernetes-deploy:
