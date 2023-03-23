@@ -30,7 +30,7 @@ jobs:
   deploy_app:
     environment:
        imageName: my-app 
-    working_directory: .circleci/files/
+    working_directory: ~/repo/peng
     # specity what will execute steps
     docker:
       - image: cimg/python:3.10.0-node
