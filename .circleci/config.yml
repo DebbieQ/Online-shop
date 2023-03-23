@@ -53,8 +53,7 @@ jobs:
             docker run -p 80:80 -d my-app 
             dockerpath=debbiequarsh/my-app
             echo "Docker ID and Image: $dockerpath"
-            docker login && \
-	            docker tag $dockerpath $dockerpath:latest
+            docker login && docker tag $dockerpath $dockerpath:latest
             docker push $dockerpath:latest
 
 
