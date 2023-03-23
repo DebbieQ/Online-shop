@@ -1,6 +1,5 @@
 version: 2.1
 
-
 jobs:
   build-and-test:
     working_directory: ~/repo/project-ml-microservice-kubernetes
@@ -28,16 +27,16 @@ jobs:
           name: run lint
           command: |
             make lint
-deploy_app:
+  deploy_app:
     environment:
-      imageName: my-app 
+       imageName: my-app 
     # specity what will execute steps
     docker:
       - image: cimg/python:3.10.0-node
         auth:
           # Environmental variables set from $context_name context
-          username: $dockerhub_username
-          password: $dockerhub_password
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     
     steps:
       - checkout
