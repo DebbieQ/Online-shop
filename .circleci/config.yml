@@ -30,7 +30,7 @@ jobs:
   deploy_app:
     environment:
        imageName: my-app 
-    working_directory: ~/repo/peng
+    working_directory: /root/repo/peng
     # specity what will execute steps
     docker:
       - image: cimg/python:3.10.0-node
