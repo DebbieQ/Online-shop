@@ -66,5 +66,5 @@ workflows:
           requires: [build-and-test]
           # context:
           #   - docker credentials
-      - kubernetes_deploy:
+      - kubernetes-deploy:
           requires: [deploy_app]
