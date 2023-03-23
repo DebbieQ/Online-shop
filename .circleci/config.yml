@@ -48,10 +48,19 @@ jobs:
       - run:
           name: Build, tag and push image
           command: |
-            docker build -f peng/Dockerfile -t $imageName .
-            docker tag $imageName $DOCKERHUB_USERNAME/$imageName
-            echo "$DOCKERHUB_PASSWORD" | docker login -u $DOCKER_USERNAME --password-stdin
-            docker push $DOCKERHUB_USERNAME/$imageName
+            docker image build -t my-app .
+            docker images
+            docker run -p 80:80 -d my-app 
+            dockerpath=debbiequarsh/my-app
+            echo "Docker ID and Image: $dockerpath"
+            docker login && \
+	              docker tag $dockerpath $dockerpath:latest
+            docker push $dockerpath:latest
+
+            # docker build -f peng/Dockerfile -t $imageName .
+            # docker tag $imageName $DOCKERHUB_USERNAME/$imageName
+            # echo "$DOCKERHUB_PASSWORD" | docker login -u $DOCKER_USERNAME --password-stdin
+            # docker push $DOCKERHUB_USERNAME/$imageName
   kubernetes-deploy:
     docker:
       - image: cimg/python:3.10.0-node
