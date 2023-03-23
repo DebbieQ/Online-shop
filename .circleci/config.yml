@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Build, tag and push image
           command: |
-            docker image build -t my-app .
+            docker image build -f peng/Dockerfile -t my-app .
             docker images
             docker run -p 80:80 -d my-app 
             dockerpath=debbiequarsh/my-app
