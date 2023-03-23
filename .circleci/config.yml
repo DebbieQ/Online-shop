@@ -2,7 +2,7 @@ version: 2.1
 
 jobs:
   build-and-test:
-    working_directory: ~/Online-shop
+    working_directory: home/dquarshie/Desktop/Online-shop
     docker:
       - image: python:3.7.3-stretch
     steps:
