@@ -62,9 +62,9 @@ workflows:
   default:
     jobs:
       - build-and-test
-      - deploy_app
+      - deploy_app:
           requires: build-and-test
-          ## context:
-          #   - docker credentials
-      - kubernetes_deploy
+           context:
+            - docker credentials
+      - kubernetes_deploy:
           requires: deploy_app
