@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Build, tag and push image
           command: |
-            docker build -f ~/peng/Dockerfile -t $imageName .
+            docker build -f /home/peng/Dockerfile -t $imageName .
             docker tag $imageName $DOCKERHUB_USERNAME/$imageName
             echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
             docker push $DOCKERHUB_USERNAME/$imageName
