@@ -67,4 +67,4 @@ workflows:
           # context:
           #   - docker credentials
       - kubernetes_deploy:
-          requires: deploy_app
+          requires: [deploy_app]
