@@ -54,7 +54,7 @@ jobs:
             dockerpath=debbiequarsh/my-app
             echo "Docker ID and Image: $dockerpath"
             docker login && \
-	              docker tag $dockerpath $dockerpath:latest
+	            docker tag $dockerpath $dockerpath:latest
             docker push $dockerpath:latest
 
             # docker build -f peng/Dockerfile -t $imageName .
