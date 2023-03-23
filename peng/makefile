@@ -1,5 +1,5 @@
 setup:
-	sudo python3 -m venv ~/.devops && \
+	python3 -m venv ~/.devops && \
 		. ~/.devops/bin/activate
  
 install:
