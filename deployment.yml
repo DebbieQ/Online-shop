@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shop-pod
+spec:
+  selector:
+    matchLabels:
+      run: shop-pod
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: shop-pod
+    spec:
+      containers:
+        - name: shop-s01
+          image: debbiequarsh/my-app:latest
+          ports:
+            - containerPort: 80
+              protocol: TCP

@@ -1,0 +1,46 @@
+title{
+    text-align: center;
+}
+.welcome{
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.welcome::before{
+    content: "";
+    background-image: url("clothes.jpeg");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 20px;
+    left: 0px;
+    opacity: 0.5;
+
+}
+
+h1 {
+    position: relative;
+    color: rosybrown; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    font-size: 80px;
+    /* line-height: 0.9; */
+    text-align: center;
+}
+/* #con{
+    font-family: fantasy;
+    font-size: 30px;
+    text-align: left;
+    padding-top: 0%; */
+/* } */
+
+.conn{
+    top: 0px;
+    font-size: 20px;
+    text-align: center;
+}
