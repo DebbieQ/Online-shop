@@ -34,10 +34,10 @@ jobs:
     # specity what will execute steps
     docker:
       - image: cimg/python:3.10.0-node
-        auth:
-          # Environmental variables set from $context_name context
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+        # auth:
+        #   # Environmental variables set from $context_name context
+        #   username: $DOCKERHUB_USERNAME
+        #   password: $DOCKERHUB_PASSWORD
     
     steps:
       - checkout
@@ -53,7 +53,7 @@ jobs:
             docker run -p 80:80 -d my-app 
             dockerpath=debbiequarsh/my-app
             echo "Docker ID and Image: $dockerpath"
-            echo "$DOCKERHUB_PASSWORD" | docker login -u $DOCKER_USERNAME --password-stdin && docker tag $dockerpath $dockerpath:latest
+            docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD && docker tag $dockerpath $dockerpath:latest
             docker push $dockerpath:latest
 
             # docker build -f peng/Dockerfile -t $imageName .
