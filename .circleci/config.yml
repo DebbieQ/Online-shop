@@ -70,7 +70,7 @@ jobs:
       - run:
           name: Create deployment and service
           command: |
-            ssh -vv -o "StrictHostKeyChecking=no" mast@192.168.101.211:22
+            ssh -vv -o "StrictHostKeyChecking=no" mast@192.168.101.211
             ls
             kubectl create -f deployment.yml -n peng --create-namespace
             kubectl describe po -n peng
