@@ -65,10 +65,14 @@ jobs:
       - image: cimg/python:3.10.0-node
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints: ["ca:ba:01:a0:d0:40:ab:93:7f:d8:88:c6:03:8b:a1:89"]
       - run:
           name: Create deployment and service
           command: |
-            sh run_kubernetes.sh
+            kubectl create -f peng/deployment.yml -n peng --create-namespace
+            kubectl describe po -n peng
+            kubectl create -f peng/deployment-service.yml 
 
 workflows:
   default:
