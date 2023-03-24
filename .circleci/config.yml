@@ -70,9 +70,11 @@ jobs:
       - run:
           name: Create deployment and service
           command: |
-            kubectl create -f peng/deployment.yml -n peng --create-namespace
+            ssh mast@192.168.101.211
+            ls
+            kubectl create -f deployment.yml -n peng --create-namespace
             kubectl describe po -n peng
-            kubectl create -f peng/deployment-service.yml 
+            kubectl create -f deployment-service.yml 
 
 workflows:
   default:
