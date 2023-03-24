@@ -66,7 +66,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-          fingerprints: ["ca:ba:01:a0:d0:40:ab:93:7f:d8:88:c6:03:8b:a1:89"]
+          fingerprints: ["ca:ba:01:a0:d0:40:ab:93:7f:d8:88:c6:03:8b:a1:89"] 
       - run:
           name: Create deployment and service
           command: |
